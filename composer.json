@@ -1,14 +1,15 @@
 {
-    "name": "zendframework/skeleton-application",
-    "description": "Skeleton Application for ZF2",
-    "license": "BSD-3-Clause",
+    "name": "stuki-org/roll-n-api-www",
+    "description": "Website for http://www.rollnapi.com",
     "keywords": [
-        "framework",
-        "zf2"
+        "api",
+        "php",
+        "zend framework",
+        "apigility"
     ],
-    "homepage": "http://framework.zend.com/",
+    "homepage": "http://www.rollnapi.com",
     "require": {
         "php": ">=5.3.3",
-        "zendframework/zendframework": "2.2.*"
+        "zendframework/zendframework": ">=2.2"
     }
 }
