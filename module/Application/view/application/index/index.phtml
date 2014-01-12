@@ -12,9 +12,12 @@
 
         These technologies support <a href="http://www.doctrine-project.org/blog/database-support-doctrine2.html">many databases</a>.
     </p>
+    <!--
     <p class="alert alert-success"><b>
         If you need any help please <a href="mailto:support@rollnapi.com">contact us</a>.
-    </b></p>
+    </b>
+    </p>
+    -->
 </div>
 
 <div class="row">
@@ -28,9 +31,19 @@
                 and clone a copy to work on locally.  The root directory of your cloned copy will hereafter be referred to as ~</p>
 
                 <p>
-                    Once you have cloned the project run <a href="http://www.getcomposer.org">Composer</a>.  This will install all the
-                    supporting libraries for your API.  The command, once you download Composer, is <i>php composer.phar install --dev</i>
+                    Run ~/bin/install
                 </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title"><?php echo $this->translate('2. Configure the project') ?></h3>
+            </div>
+            <div class="panel-body">
+                <p>Create an empty database.</p>
 
                 <p>
                     Copy ~/config/autoload/local.php.dist to ~/config/autoload/local.php and edit for your database.
@@ -42,21 +55,20 @@
         </div>
     </div>
 
+
     <div class="col-md-4">
         <div class="panel panel-default">
             <div class="panel-heading">
-                <h3 class="panel-title"><?php echo $this->translate('2. Design your database') ?></h3>
+                <h3 class="panel-title"><?php echo $this->translate('3. Design your ERD') ?></h3>
             </div>
             <div class="panel-body">
                 <p>Download and install <a href="http://www.orm-designer.com">ORM Designer</a> then open ~/documentation/RollNApi.ormdesigner2</p>
 
-                <p>Create your database using any method you'd like except many-to-many relationships.  For these releations use table between the two
+                <p>Create your Entity Relationship Diagram using any method you'd like except many-to-many relationships.  For these releations use table between the two
                 relations with a relation to each and and id.</p>
 
-                <p>The RollNApi project only supports one module out of the box so if you get fancy and create more you've been warned.</p>
-
                 <p>For guidance you can reference <a href="https://github.com/etreedb/etreedb-db/raw/master/documentation/orm_designer/db.ormdesigner">
-                a complete entity relationship diagram, or ERD</a>, and the documentation on the <a href="http://www.orm-designer.com">ORM Designer</a> web site.
+                a complete entity relationship diagram</a> and the documentation on the <a href="http://www.orm-designer.com">ORM Designer</a> web site.
             </div>
         </div>
     </div>
@@ -64,29 +76,64 @@
     <div class="col-md-4">
         <div class="panel panel-default">
             <div class="panel-heading">
-                <h3 class="panel-title"><?php echo $this->translate('3. Export you diagram') ?></h3>
+                <h3 class="panel-title"><?php echo $this->translate('4. Export your diagram and install it') ?></h3>
             </div>
             <div class="panel-body">
                 <p>When your ERD is complete click "Export to ORM".  This will create files in ~/module/Db/config/xml  If you need to re-export
                 your diagram be sure to delete all the files in the ~/module/Db/config/xml directory first.
                 </p>
+
+                <p>
+                    Run ~/bin/rebuild
+                </p>
+
+                <p>
+                    Your database is now created.
+                </p>
             </div>
         </div>
     </div>
-</div>
 
-<div class="row">
     <div class="col-md-4">
         <div class="panel panel-default">
             <div class="panel-heading">
-                <h3 class="panel-title"><?php echo $this->translate('4. Create your database') ?></h3>
+                <h3 class="panel-title"><?php echo $this->translate('5. Optional:  Add Faker data') ?></h3>
             </div>
             <div class="panel-body">
-                <p>Manually create your database using the tool of your choice.
+                <p>
+                    You may add dummy data to your database.  Edit ~/module/Db/src/Db/Fixture/Faker.php and copy the
+                    #        $populator->addEntity('Db\Entity\Name', 10);
+                    line and replace it with your entities for each entity.
+                </p>
 
-                <p>Using <a href="http://git-scm.com/">git</a>, fork <a href="https://github.com/StukiOrg/RollNApi">the RollNApi project</a>
-                and clone a copy to work on locally.  The root directory of your cloned copy will hereafter be referred to as ~</p>
+                <p>
+                    Run ~/bin/fixtures
+                </p>
             </div>
         </div>
     </div>
+
+    <div class="col-md-4">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title"><?php echo $this->translate('6. Build your API') ?></h3>
+            </div>
+            <div class="panel-body">
+                <p>
+                    Run the application ~: <i>php -S localhost:8080 -t public/ public/index.php</i>
+                </p>
+
+                <p>
+                    Browse to <a href="http://localhost:8080/soliant-consulting/apigility/admin">http://localhost:8080/soliant-consulting/apigility/admin</a>
+                    and create your api.  Name your module 'DbApi'.  On the next page select "Hydrate by value", select all checkboxes next to your entity names
+                    and click 'Create Api'.  Your API routes will be shown.  You can now connect to your API through a http client.
+                </p>
+
+                <p>
+                    Browse to <a href="http://localhost:8080/admin">http://localhost:8080/admin</a> to see the Apigility console.
+                </p>
+            </div>
+        </div>
+    </div>
+
 </div>
