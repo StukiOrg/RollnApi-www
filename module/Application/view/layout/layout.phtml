@@ -26,11 +26,25 @@
 
     </head>
     <body>
+
+        <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+            <div class="container">
+                <div class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav">
+                        <li class=""><a href="http://www.orm-designer.com">ORM Designer</a></li>
+                        <li class=""><a href="http://framework.zend.com">Zend Framework</a></li>
+                        <li class=""><a href="http://www.doctrine-project.org">Doctrine Project</a></li>
+                        <li class=""><a href="http://www.apigility.com">Apigility</a></li>
+                    </ul>
+                </div><!--/.nav-collapse -->
+            </div>
+        </nav>
+
         <div class="container">
             <?php echo $this->content; ?>
             <hr>
             <footer>
-                <p>&copy; 2005 - <?php echo date('Y') ?> <a href="mailto:tom.h.anderson@gmail.com">Roll'n API</a> <?php echo $this->translate('All rights reserved.') ?></p>
+                <p>&copy;<?php echo date('Y') ?> <a href="mailto:tom.h.anderson@gmail.com">Roll'n API</a> <?php echo $this->translate('All rights reserved.') ?></p>
             </footer>
         </div> <!-- /container -->
         <?php echo $this->inlineScript() ?>
