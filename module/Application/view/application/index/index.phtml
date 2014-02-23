@@ -5,7 +5,7 @@
     <p>This website will guide you to build a Hypertext Application Language (HAL) Application Programming Interface (API) from database design to final relase using the very latest in PHP technology.</p>
 
     </p>
-        These technologies support <a href="http://www.doctrine-project.org/blog/database-support-doctrine2.html">many databases</a>.
+        This application uses a sqlite database which may be changed in the local.php configuration.
     </p>
 </div>
 
@@ -109,19 +109,13 @@
             </div>
             <div class="panel-body">
                 <p>
+                    Run <b>bin/apirebuild</b> to create the API.  This will output your api endpoints.
+                <p>
                     Run the application ~: <b>php -S localhost:8080 -t public/ public/index.php</b>
                 </p>
                 <p>
-                    Browse to <a href="http://localhost:8080/admin">http://localhost:8080/admin</a> to see the Apigility console.
+                    Browse to <a href="http://localhost:8080/admin">http://localhost:8080/admin</a> to see the Apigility console.  Use an HTTP client to query your API endpoints.
                 </p>
-
-                <p>
-                    Create a new module in the admin and name your module 'DbApi'.  
-                    To be continued...
-
-
-                </p>
-
             </div>
         </div>
     </div>
