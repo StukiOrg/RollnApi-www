@@ -1,11 +1,14 @@
 
 <div class="jumbotron">
     <img src="/images/rollnapi.png" align="left" style="margin: 5px;">
-    <h1><?php echo sprintf($this->translate('Welcome to %sRoll\'n API%s'), '<span class="color-orange">', '</span>') ?></h1>
-    <p>This website will guide you to build a Hypertext Application Language (HAL) Application Programming Interface (API) from database design to final relase using the very latest in PHP technology.</p>
+    <h1><?php echo sprintf($this->translate('Roll\'n API'), '<span class="color-orange">', '</span>') ?></h1>
+    <p>
+ 	This website is the companion to a talk about building an API with Apigility and a relational database built with Doctrine. 
+	Concepts covered are ORM, ODM, HAL, ZF2, ORM Designer, and Apigility.  <a href="/about">More Info...</a>
+    </p>
 
     </p>
-        This application uses a sqlite database which may be changed in the local.php configuration.
+        About the Presenter: <a href="https://about.me/tom_h_anderson">Tom Anderson</a>
     </p>
 </div>
 
@@ -34,7 +37,7 @@
             </div>
             <div class="panel-body">
                 <p>
-                    Copy <b>~/config/autoload/local.php.dist</b> to <b>~/config/autoload/local.php</b>.  No need to edit this file unless you choose to use a database other than the included sqlite db.
+                    Copy <b>~/config/autoload/local.php.dist</b> to <b>~/config/autoload/local.php</b>.  There is no need to edit this file unless you choose to use a database other than the included sqlite db.
                 </p>
             </div>
         </div>
@@ -49,7 +52,7 @@
             <div class="panel-body">
                 <p>Use <a href="http://www.orm-designer.com">ORM Designer</a> to open <b>~/documentation/RollNApi.ormdesigner2</b></p>
 
-                <p>Create your Entity Relationship Diagram using any method you'd like except many-to-many relationships.  For these releations use table between the two
+                <p>Create your Entity Relationship Diagram using any method you'd like except many-to-many relationships.  For these releations use a table between the two
                 relations with a relation to each and and id.</p>
 
                 <p>For guidance you can reference <a href="https://github.com/etreedb/etreedb-db/raw/master/documentation/orm_designer/db.ormdesigner">
